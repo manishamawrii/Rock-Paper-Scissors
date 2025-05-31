@@ -1,6 +1,6 @@
 let gamechoice = document.querySelectorAll(".sps");
-// console.log(gamechoice)
 
+let movesound = document.getElementById("moveSound")
 let user = document.querySelector(".user")
 let computer = document.querySelector(".computer")
 let winner = document.querySelector(".winner")
@@ -25,11 +25,12 @@ gamechoice.forEach(btn=>{
       let usercho = e.target.getAttribute("id");
       console.log(usercho)
       user.innerHTML= `user select ${usercho}`
+      movesound.play()
       let compu = computersel();
       console.log(compu)
       
        computer.innerHTML= `computer select ${compu}`
-
+         movesound.play()
        
       //  console.log(computer.innerHTML)
       if(usercho===compu)
@@ -45,9 +46,8 @@ gamechoice.forEach(btn=>{
          winner.innerHTML = "USER WIN"
          winner.style.backgroundColor = "green"
          usersscore++;
-         
          uscore.innerHTML= `user score :  ${usersscore}`
-
+         
    
       }
       else{
